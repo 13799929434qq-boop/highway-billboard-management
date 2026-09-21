@@ -1,0 +1,20 @@
+# Local dependencies and generated work
+.artifact-work/
+node_modules/
+tmp/
+.docx-qa/
+.docx-qa-v2/
+.xlsx-qa/
+.codex-doc-review/
+*.inspect.ndjson
+*.visual-check.*
+
+# Local credentials and machine state
+.env
+.env.*
+!.env.example
+*.local
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
