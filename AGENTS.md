@@ -6,7 +6,7 @@ The project already has `openspec/config.yaml`. Preserve its configuration and a
 
 ### Issue tracker
 
-Project work is tracked in GitHub Issues after the GitHub remote is connected. See `docs/agents/issue-tracker.md`.
+Project work is tracked in this repository's GitHub Issues. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 

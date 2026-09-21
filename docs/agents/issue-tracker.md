@@ -1,6 +1,6 @@
 # Issue tracker: GitHub
 
-Project issues and implementation specifications will live in this repository's GitHub Issues. The local Git repository does not yet have a remote, so GitHub issue operations start only after the remote is connected and `gh` is authenticated. Do not create local shadow issues in the meantime.
+Project issues and implementation specifications live in the private GitHub repository `13799929434qq-boop/highway-billboard-management`. The local `main` branch tracks `origin/main`. Use the authenticated `gh` CLI for issue operations; do not create local shadow issues.
 
 ## Conventions
 
@@ -11,7 +11,7 @@ Project issues and implementation specifications will live in this repository's 
 - Label: `gh issue edit <number> --add-label <label>` or `--remove-label <label>`.
 - Close: `gh issue close <number>`.
 
-Infer the repository from the Git remote after it is connected. An issue number alone refers to GitHub Issues in that repository.
+Infer the repository from the Git remote. An issue number alone refers to GitHub Issues in that repository.
 
 ## Pull requests as a triage surface
 
@@ -19,4 +19,4 @@ Infer the repository from the Git remote after it is connected. An issue number 
 
 ## Skill operations
 
-When a skill says to publish an issue, create a GitHub issue. When it says to fetch a ticket, read that GitHub issue and its comments. Use the role names in `docs/agents/triage-labels.md` for triage. If no remote exists yet, report that the operation is pending GitHub setup instead of silently switching trackers.
+When a skill says to publish an issue, create a GitHub issue. When it says to fetch a ticket, read that GitHub issue and its comments. Use the role names in `docs/agents/triage-labels.md` for triage.
