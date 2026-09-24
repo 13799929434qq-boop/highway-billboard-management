@@ -6,12 +6,12 @@ The project already has `openspec/config.yaml`. Preserve its configuration and a
 
 ### Issue tracker
 
-Project work is tracked in this repository's GitHub Issues. See `docs/agents/issue-tracker.md`.
+Project work is tracked in TAPD workspace 「魔幻陀螺组」(ID `64099159`). The authoritative scope, 54 story IDs and priorities live in `docs/需求基线_TAPD对齐版_V1.0.md`.
 
-### Triage labels
+### Priorities
 
-Use the five default triage labels. See `docs/agents/triage-labels.md`.
+Use TAPD priority labels High / Middle / Low per the baseline; in-page numbering (01, 02, …) gives the build order within each page.
 
 ### Domain docs
 
-Use the single-context layout: root `CONTEXT.md` and `docs/adr/`. See `docs/agents/domain.md`.
+Use the single-context layout: root `CONTEXT.md` for the ubiquitous language and `docs/adr/` for architecture decisions.
