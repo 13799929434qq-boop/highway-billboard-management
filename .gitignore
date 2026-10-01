@@ -16,5 +16,8 @@ tmp/
 *.local
 __pycache__/
 *.py[cod]
+.venv/
+.pytest_cache/
+frontend/dist/
 .DS_Store
 Thumbs.db
