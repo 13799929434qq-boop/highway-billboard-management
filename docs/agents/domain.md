@@ -1,9 +1,33 @@
-# Domain docs
+# Domain Docs
 
-This is a single-context repository. Before exploring or changing business behavior, read the root `CONTEXT.md` and the relevant decisions in `docs/adr/`.
+How engineering skills should consume this repository's domain documentation when exploring or changing the codebase.
 
-Use the terms defined in `CONTEXT.md` in issue titles, specifications, code, and tests. If a needed concept is absent, record the gap rather than inventing an inconsistent synonym.
+## Before exploring or changing domain behavior
 
-If proposed work conflicts with an ADR, identify the conflict and the decision that needs to be revisited. ADRs in this project are currently working documents; their approval status should be checked before treating them as final.
+- Read `CONTEXT.md` at the repository root for the ubiquitous language and current domain baseline.
+- Read the ADRs under `docs/adr/` that affect the area being changed.
+- Treat `docs/需求基线_TAPD对齐版_V1.0.md` and confirmed stakeholder records as authoritative when they differ from terminology notes.
 
-No `CONTEXT-MAP.md` or context-specific ADR directory is used. Do not create them unless the repository later becomes a genuine multi-package, multi-context project.
+If one of these files is absent, proceed silently. Create or extend domain documentation only when a real term or architectural decision has been resolved.
+
+## Layout
+
+This is a single-context repository:
+
+```text
+/
+├── CONTEXT.md
+├── docs/
+│   └── adr/
+└── src/
+```
+
+## Use the glossary's vocabulary
+
+When an issue title, proposal, test, implementation, or explanation names a domain concept, use the term defined in `CONTEXT.md`. Avoid synonyms that the glossary explicitly rejects.
+
+If a required concept is missing, first reconsider whether the term belongs to the project. If it represents a genuine domain gap, record it for domain-modeling work.
+
+## Flag ADR conflicts
+
+If proposed work conflicts with an existing ADR, identify the relevant ADR and explain the conflict explicitly rather than silently overriding the decision.

@@ -1,22 +1,20 @@
-# Issue tracker: GitHub
+# Issue Tracker
 
-Project issues and implementation specifications live in the private GitHub repository `13799929434qq-boop/highway-billboard-management`. The local `main` branch tracks `origin/main`. Use the authenticated `gh` CLI for issue operations; do not create local shadow issues.
+Project work is tracked in TAPD rather than GitHub Issues.
 
-## Conventions
+## Workspace
 
-- Create: `gh issue create --title "..." --body-file <file>` for multiline content.
-- Read: `gh issue view <number> --comments`.
-- List: `gh issue list --state open --json number,title,body,labels,comments`.
-- Comment: `gh issue comment <number> --body-file <file>`.
-- Label: `gh issue edit <number> --add-label <label>` or `--remove-label <label>`.
-- Close: `gh issue close <number>`.
+- Workspace: 「魔幻陀螺组」
+- Workspace ID: `64099159`
+- Authoritative scope: `docs/需求基线_TAPD对齐版_V1.0.md`
 
-Infer the repository from the Git remote. An issue number alone refers to GitHub Issues in that repository.
+The baseline contains the authoritative 54 story IDs, page grouping, priorities, and build order. Do not derive scope from older requirement lists, temporary snapshots, or GitHub Issues.
 
-## Pull requests as a triage surface
+## Working rules
 
-**PRs as a request surface: no.**
-
-## Skill operations
-
-When a skill says to publish an issue, create a GitHub issue. When it says to fetch a ticket, read that GitHub issue and its comments. Use the role names in `docs/agents/triage-labels.md` for triage.
+- Use the TAPD story ID from the baseline when referring to a tracked requirement.
+- Use TAPD priority labels `High`, `Middle`, and `Low` exactly as recorded in the baseline.
+- Within a page, use its sequence number (`01`, `02`, …) as the build order.
+- Read from and write to TAPD through the project's TAPD workflow or installed `tapd` skill.
+- Keep TAPD and the authoritative baseline aligned when scope, priority, or story status changes.
+- Do not treat pull requests as an issue intake or triage queue.
