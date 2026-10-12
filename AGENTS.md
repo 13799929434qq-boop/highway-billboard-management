@@ -31,11 +31,11 @@ Use TAPD priority labels High / Middle / Low per the baseline; in-page numbering
 
 Use the single-context layout: `docs/domain-领域模型/CONTEXT-领域上下文.md` for the ubiquitous language and `docs/adr-架构决策/架构决策总表-现行规则.md` for architecture decisions. See `docs/project-management-项目管理/agents-协作规则/domain.md`.
 
-## File organization and Chinese indexes
+## File organization and Chinese labels
 
-- Whenever files or folders are reorganized anywhere in this project, create or update a `00-中文索引.md` in the root of the organized area so the owner can understand the result without relying on English names. Source-code, dependency, generated-output, cache, and tool-internal directories are exempt unless the user asks for an index there.
-- Write the index in plain Chinese. Explain the purpose of every immediate subfolder and every important file, and add a Chinese explanation for any retained English name.
-- The Chinese index must identify each important file's purpose, status, and whether it is current, reference-only, generated, or a historical decision record.
+- Do not create a Chinese index mechanically for every folder. Add or update `00-中文索引.md` only when a folder contains many English names, has a complex structure, or its current/reference status is otherwise difficult to understand.
+- When folder and file names are already clear Chinese and the structure is self-explanatory, prefer meaningful Chinese names and avoid a redundant index.
+- When an index is genuinely needed, write it in plain Chinese, explain retained English names, and identify which important files are current, reference-only, generated, or historical records.
 - Keep only one current version of the same business page, diagram, specification, or deliverable in the working tree. Use Git history to recover superseded versions instead of keeping V1/V2 copies side by side.
 - Name the retained current artifact with the Chinese suffix `-现行版` when its status would otherwise be unclear.
 - Keep generated screenshots, validation evidence, caches, temporary scripts, comparison pages, and tool snapshots out of the formal documentation tree unless they are the sole approved deliverable.
