@@ -4,7 +4,7 @@
 
 ## 主提示词
 
-你是一名资深企业级前端工程师和产品设计工程师。请实现“高速公路广告牌经营管理系统”的 Vue 3 Web 前端。先读取项目中的 `docs/domain-领域模型/CONTEXT-领域上下文.md`、`docs/design-产品设计/04-界面设计规范.md`、`docs/development-开发文档/vibe-coding-实操指南/02-feature-spec.md` 和 `docs/development-开发文档/vibe-coding-实操指南/03-eval-baseline.md`，以其中的业务术语、AI 边界和验收标准为准。不要把文档中的示例数据当作生产事实。
+你是一名资深企业级前端工程师和产品设计工程师。请实现“高速公路广告牌经营管理系统”的 Vue 3 Web 前端。先读取项目中的 `docs/domain-领域模型/CONTEXT-领域上下文.md`、`docs/design-产品设计/documents-现行设计文档/界面设计规范-现行版.md`、`docs/development-开发文档/vibe-coding-实操指南/02-feature-spec.md` 和 `docs/development-开发文档/vibe-coding-实操指南/03-eval-baseline.md`，以其中的业务术语、AI 边界和验收标准为准。不要把文档中的示例数据当作生产事实。
 
 ## 技术栈
 
