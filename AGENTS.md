@@ -17,11 +17,11 @@ OpenSpec is optional and follows the same opt-in rule as other skills. Preserve 
 
 ### Issue tracker
 
-Project work is tracked in TAPD workspace 「魔幻陀螺组」(ID `64099159`). The authoritative scope, 54 story IDs and priorities live in `docs/requirements-需求文档/需求基线_TAPD对齐版_V1.0.md`. See `docs/project-management-项目管理/agents-协作规则/issue-tracker.md`.
+Project work is tracked in TAPD workspace 「魔幻陀螺组」(ID `64099159`). The authoritative scope, 54 story IDs and priorities live in `docs/requirements-需求文档/需求基线_TAPD对齐版_V1.0.md`. See `docs/project-management-项目管理/项目协作规则-现行版.md`.
 
 ### Triage labels
 
-Use the default triage labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix`. See `docs/project-management-项目管理/agents-协作规则/triage-labels.md`.
+Use the default triage labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix`. See `docs/project-management-项目管理/项目协作规则-现行版.md`.
 
 ### Priorities
 
@@ -29,7 +29,7 @@ Use TAPD priority labels High / Middle / Low per the baseline; in-page numbering
 
 ### Domain docs
 
-Use the single-context layout: `docs/domain-领域模型/CONTEXT-领域上下文.md` for the ubiquitous language and `docs/adr-架构决策/架构决策总表-现行规则.md` for architecture decisions. See `docs/project-management-项目管理/agents-协作规则/domain.md`.
+Use the single-context layout: `docs/domain-领域模型/CONTEXT-领域上下文.md` for the ubiquitous language and `docs/adr-架构决策/架构决策总表-现行规则.md` for architecture decisions. See `docs/project-management-项目管理/项目协作规则-现行版.md`.
 
 ## File organization and Chinese labels
 
@@ -40,5 +40,5 @@ Use the single-context layout: `docs/domain-领域模型/CONTEXT-领域上下文
 - Name the retained current artifact with the Chinese suffix `-现行版` when its status would otherwise be unclear.
 - Keep generated screenshots, validation evidence, caches, temporary scripts, comparison pages, and tool snapshots out of the formal documentation tree unless they are the sole approved deliverable.
 - Preserve useful design and decision documents, but place non-current material under a clearly marked `references-设计参考` or `decisions-设计决策` folder so agents do not treat it as the active baseline.
-- After moving or deleting documentation, update all references, verify that no stale path remains, and update the category's Chinese index in the same change.
+- After moving or deleting documentation, update all references, verify that no stale path remains, and update an existing index only when that index is still needed.
 - Root-level `README.md` and `AGENTS.md` are discovery and control files and are exempt from the `00-中文索引.md` naming rule.
