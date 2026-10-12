@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "project": "高速公路广告牌经营管理系统",
+  "brief": "运营档案员在桌面端查找广告牌，核对路段、现场桩号、经营状态与手续状态，并进入正式档案。所有候选均只表达 P2 已定义功能。",
+  "round": "01",
+  "candidates": [
+    {
+      "id": "baseline",
+      "name": "现有文档驱动稿",
+      "concept": "使用既有低保真结构套用设计规范，作为本轮比较基线。",
+      "typography": "Microsoft YaHei，无衬线统一层级",
+      "palette": [
+        "#17212B",
+        "#245A7A",
+        "#C45D20"
+      ],
+      "traits": [
+        "传统左侧栏",
+        "单列台账",
+        "评审外壳"
+      ],
+      "kind": "image",
+      "source": "baseline.png",
+      "baseline": true
+    },
+    {
+      "id": "route-workbench",
+      "name": "路段作业台",
+      "concept": "像在运营中心边查台账边核对现场资料。",
+      "typography": "中文无衬线；26px 页面标题；紧凑数据排版",
+      "palette": [
+        "#172630",
+        "#255F7F",
+        "#E36D2F"
+      ],
+      "traits": [
+        "台账与摘要并排",
+        "高频核对",
+        "深灰路牌体系"
+      ],
+      "kind": "image",
+      "source": "direction-a.png"
+    },
+    {
+      "id": "archive-index",
+      "name": "档案索引册",
+      "concept": "像查阅一套管理严谨的正式资产档案。",
+      "typography": "中文宋体标题；无衬线控件；衬线编号和桩号",
+      "palette": [
+        "#F6F3EB",
+        "#8F3029",
+        "#282A28"
+      ],
+      "traits": [
+        "路段索引",
+        "档案条目",
+        "纸张与印章语法"
+      ],
+      "kind": "image",
+      "source": "direction-b.png"
+    },
+    {
+      "id": "dispatch-board",
+      "name": "公路调度板",
+      "concept": "像在路网调度席位上快速扫过经营和合规信号。",
+      "typography": "紧凑无衬线；强化数字；横向扫描层级",
+      "palette": [
+        "#10282A",
+        "#176B67",
+        "#D6B52A"
+      ],
+      "traits": [
+        "顶部路段带",
+        "全宽台账",
+        "状态信号化"
+      ],
+      "kind": "image",
+      "source": "direction-c.png"
+    }
+  ]
+}

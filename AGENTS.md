@@ -1,16 +1,27 @@
 # Project agent instructions
 
-The project already has `openspec/config.yaml`. Preserve its configuration and artifacts; do not initialize OpenSpec again. Read `CONTEXT.md` and relevant `docs/adr/` decisions before changing domain behavior.
+Read `docs/domain-领域模型/CONTEXT-领域上下文.md` and relevant `docs/adr-架构决策/` decisions before changing domain behavior.
+
+## Workflow
+
+Use the Matt Pocock engineering skills as the default project workflow.
+
+- Treat TAPD stories and `docs/requirements-需求文档/需求基线_TAPD对齐版_V1.0.md` as the authoritative source of scope and priority.
+- For a clear, ready requirement, use the implementation flow with TDD and code review.
+- Use the Matt Skills routing and supporting flows when requirements need clarification, decomposition, diagnosis, prototyping, or triage.
+- Do not require new OpenSpec artifacts before implementation.
+
+OpenSpec is currently paused. Preserve `openspec/config.yaml` and all existing artifacts under `openspec/`, but do not initialize, update, apply, verify, sync, or archive OpenSpec changes unless the user explicitly asks to resume the OpenSpec workflow. Existing OpenSpec artifacts may be consulted as historical design input, but they are not the active task tracker or mandatory implementation gate.
 
 ## Agent skills
 
 ### Issue tracker
 
-Project work is tracked in TAPD workspace 「魔幻陀螺组」(ID `64099159`). The authoritative scope, 54 story IDs and priorities live in `docs/需求基线_TAPD对齐版_V1.0.md`. See `docs/agents/issue-tracker.md`.
+Project work is tracked in TAPD workspace 「魔幻陀螺组」(ID `64099159`). The authoritative scope, 54 story IDs and priorities live in `docs/requirements-需求文档/需求基线_TAPD对齐版_V1.0.md`. See `docs/project-management-项目管理/agents-协作规则/issue-tracker.md`.
 
 ### Triage labels
 
-Use the default triage labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix`. See `docs/agents/triage-labels.md`.
+Use the default triage labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix`. See `docs/project-management-项目管理/agents-协作规则/triage-labels.md`.
 
 ### Priorities
 
@@ -18,4 +29,4 @@ Use TAPD priority labels High / Middle / Low per the baseline; in-page numbering
 
 ### Domain docs
 
-Use the single-context layout: root `CONTEXT.md` for the ubiquitous language and `docs/adr/` for architecture decisions. See `docs/agents/domain.md`.
+Use the single-context layout: `docs/domain-领域模型/CONTEXT-领域上下文.md` for the ubiquitous language and `docs/adr-架构决策/` for architecture decisions. See `docs/project-management-项目管理/agents-协作规则/domain.md`.

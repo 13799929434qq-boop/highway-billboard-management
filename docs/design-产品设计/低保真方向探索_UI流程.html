@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>广告牌台账｜低保真方向探索</title>
+  <style>
+    :root{--ink:#181818;--mid:#666;--line:#b9b9b9;--soft:#ededed;--paper:#fff;--page:#dcdcdc;--dark:#292929}
+    *{box-sizing:border-box} body{margin:0;background:var(--page);color:var(--ink);font:14px/1.45 "Microsoft YaHei","PingFang SC",sans-serif}
+    button,input,select{font:inherit;color:inherit}.top{position:sticky;top:0;z-index:20;background:#f7f7f7;border-bottom:1px solid #999;padding:18px 28px 14px}
+    .top h1{margin:0 0 5px;font-size:20px}.top p{margin:0;color:#555}.tabs{display:flex;gap:8px;margin-top:12px}.tabs button{border:1px solid #888;background:#fff;padding:8px 14px;border-radius:3px;cursor:pointer}.tabs button.active{background:#222;color:#fff}
+    main{padding:28px}.direction{display:none;max-width:1440px;margin:auto}.direction.active{display:block}.brief{display:grid;grid-template-columns:160px 1fr 1fr 1fr;background:#f7f7f7;border:1px solid #aaa;margin-bottom:16px}
+    .brief>*{padding:12px 14px;border-right:1px solid #bbb}.brief>*:last-child{border-right:0}.brief strong{display:block;margin-bottom:3px}.brief small{color:#555}
+    .screen{height:800px;background:#fff;border:2px solid #2b2b2b;overflow:hidden;position:relative}.bar{height:54px;border-bottom:1px solid #999;display:flex;align-items:center;padding:0 22px;justify-content:space-between}.brand{font-weight:700}.muted{color:#666;font-size:12px}
+    .btn{height:34px;padding:0 14px;border:1px solid #555;background:#fff;border-radius:3px}.btn.primary{background:#222;color:#fff}.field{height:34px;border:1px solid #999;background:#fff;padding:0 10px}.tag{display:inline-block;border:1px solid #888;border-radius:20px;padding:2px 9px;font-size:12px;background:#f4f4f4}
+    .title-row{display:flex;justify-content:space-between;align-items:end}.title-row h2{font-size:24px;margin:0 0 4px}.actions{display:flex;gap:8px}.filter{border:1px solid #aaa;background:#f6f6f6;padding:12px;display:flex;gap:8px}.filter .field{flex:1;min-width:0}
+    table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid #c8c8c8;padding:12px 10px}th{background:#e8e8e8;font-size:12px}tr.selected{background:#e1e1e1;box-shadow:inset 4px 0 #222}.tiny{font-size:11px;color:#666}.strong{font-weight:700}
+    .note{position:absolute;background:#fff;border:1px dashed #777;padding:8px 10px;font-size:11px;color:#333;max-width:210px}.note b{display:block;margin-bottom:2px}.wire-photo{height:132px;border:1px solid #999;background:repeating-linear-gradient(135deg,#eee,#eee 8px,#ddd 8px,#ddd 16px);display:grid;place-items:center;color:#666}
+    /* A: ledger first */
+    .a .module{height:42px;border-bottom:1px solid #aaa;display:flex;gap:28px;align-items:center;padding:0 22px}.a .module span:first-child{font-weight:700;border-bottom:3px solid #222;height:42px;display:flex;align-items:center}.a .content{padding:24px 28px}.a .filter{margin:18px 0 14px}.a .ledger{display:grid;grid-template-columns:1fr 330px;border:1px solid #aaa;height:535px}.a .table-wrap{overflow:hidden}.a .summary{padding:16px;border-left:1px solid #aaa;background:#f8f8f8}.a .summary h3{margin:4px 0 16px;font-size:18px}.a .summary dl{margin:16px 0}.a .summary div{display:grid;grid-template-columns:90px 1fr;padding:9px 0;border-bottom:1px solid #ccc}.a .summary dt{color:#666}.a .summary dd{margin:0;font-weight:700}.a .summary .btn{margin-top:12px;width:100%}
+    /* B: split verification */
+    .b .shell{display:grid;grid-template-columns:210px 1fr;height:746px}.b aside{border-right:1px solid #999;background:#f3f3f3;padding:20px 14px}.b aside h3{margin:0 8px 20px}.b nav a{display:block;padding:11px 12px;margin:3px 0;text-decoration:none;color:#333}.b nav a.active{background:#222;color:#fff}.b .scope{position:absolute;left:24px;bottom:24px;font-size:11px;color:#555}.b .work{padding:22px}.b .filter{margin:16px 0}.b .split{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:14px;height:545px}.b .table-card,.b .detail{border:1px solid #aaa;background:#fff;overflow:hidden}.b .detail{padding:16px}.b .detail h3{font-size:18px;margin:12px 0}.b .kv{display:grid;grid-template-columns:95px 1fr;padding:10px 0;border-bottom:1px solid #ccc}.b .detail footer{display:flex;gap:8px;margin-top:16px}
+    /* C: route canvas */
+    .c .workspace{height:746px;display:grid;grid-template-columns:250px 1fr}.c .rail{border-right:1px solid #999;background:#f4f4f4;padding:20px}.c .rail h3{margin:0 0 18px}.c .rail label{display:block;font-size:12px;margin:14px 0 5px}.c .rail .field{width:100%}.c .rail .btn{width:100%;margin-top:18px}.c .canvas{padding:22px 26px}.c .canvas-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px}.c .canvas-head h2{font-size:24px;margin:0}.c .lanes{border:1px solid #999;background:#fafafa}.lane{display:grid;grid-template-columns:140px 1fr;min-height:118px;border-bottom:1px solid #aaa}.lane:last-child{border-bottom:0}.lane-name{padding:20px 14px;background:#e5e5e5;border-right:1px solid #aaa}.lane-name b{display:block;font-size:16px}.road{position:relative;padding:18px 22px}.road:before{content:"";position:absolute;left:22px;right:22px;top:58px;height:3px;background:#555}.asset{position:absolute;top:32px;width:150px;background:#fff;border:2px solid #555;padding:8px 9px;z-index:2}.asset.selected{background:#222;color:#fff}.asset small{display:block;opacity:.75}.c .selection{margin-top:14px;border:1px solid #999;display:grid;grid-template-columns:1fr 1fr 190px;min-height:142px}.c .selection>div{padding:14px;border-right:1px solid #bbb}.c .selection>div:last-child{border-right:0}.c .selection h3{margin:0 0 9px}.c .selection .btn{display:block;width:100%;margin-bottom:8px}
+    @media(max-width:900px){main{padding:10px}.brief{grid-template-columns:1fr}.brief>*{border-right:0;border-bottom:1px solid #bbb}.screen{width:1200px}.direction{overflow:auto}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <h1>广告牌台账｜低保真方向探索</h1>
+    <p>只比较工作顺序与空间结构。黑白灰、不做正式视觉；三个方向使用同一批 PRD 功能。</p>
+    <div class="tabs" role="tablist">
+      <button class="active" data-target="a">A 台账优先</button><button data-target="b">B 核对分屏</button><button data-target="c">C 路段画布</button>
+    </div>
+  </header>
+  <main>
+    <section id="a" class="direction active a">
+      <div class="brief"><strong>A｜台账优先</strong><div><strong>页面主角</strong><small>正式台账与当前档案摘要</small></div><div><strong>用户动作</strong><small>筛选 → 选中记录 → 快速核对 → 打开完整档案</small></div><div><strong>适合</strong><small>连续查阅、大批量核对</small></div></div>
+      <div class="screen">
+        <div class="bar"><span class="brand">高速公路广告牌经营管理</span><span class="muted">运营档案员　林</span></div>
+        <div class="module"><span>广告牌资产</span><span>客户管理</span><span>合同管理</span><span>财务管理</span><span>经营报表</span></div>
+        <div class="content">
+          <div class="title-row"><div><div class="tiny">广告牌资产 / 广告牌台账</div><h2>广告牌台账</h2><div class="muted">查询、核对和维护广告牌正式档案</div></div><div class="actions"><button class="btn">导出当前结果</button><button class="btn primary">新建广告牌</button></div></div>
+          <div class="filter"><input class="field" placeholder="广告牌编号或名称"><select class="field"><option>全部路段</option></select><select class="field"><option>全部经营状态</option></select><button class="btn primary">查询</button><button class="btn">重置</button></div>
+          <div class="tiny" style="margin-bottom:10px">找到 128 块广告牌 · 第 1–20 条</div>
+          <div class="ledger"><div class="table-wrap"><table><thead><tr><th>编号 / 名称</th><th>所属路段</th><th>现场桩号</th><th>状态</th><th>手续</th></tr></thead><tbody>
+            <tr class="selected"><td><span class="tiny">GG-2026-018</span><br><b>沪昆高速 K120 广告牌</b></td><td>沪昆高速</td><td><b>K120+350</b></td><td><span class="tag">在租</span></td><td>正常</td></tr>
+            <tr><td><span class="tiny">GG-2026-021</span><br><b>绕城高速南段广告牌</b></td><td>绕城高速</td><td><b>K36+800</b></td><td><span class="tag">空闲</span></td><td>保险临期</td></tr>
+            <tr><td><span class="tiny">GG-2025-109</span><br><b>杭瑞高速东向广告牌</b></td><td>杭瑞高速</td><td><b>K88+120</b></td><td><span class="tag">暂停</span></td><td>审批过期</td></tr>
+            <tr><td><span class="tiny">GG-2025-083</span><br><b>机场连接段广告牌</b></td><td>沪昆高速</td><td><b>K142+060</b></td><td><span class="tag">空闲</span></td><td>正常</td></tr>
+          </tbody></table></div><aside class="summary"><div class="tiny">当前选中 · GG-2026-018</div><h3>沪昆高速 K120 广告牌</h3><div class="wire-photo">现场照片</div><dl><div><dt>所属路段</dt><dd>沪昆高速</dd></div><div><dt>运营单位</dt><dd>华东运营单位</dd></div><div><dt>现场桩号</dt><dd>K120+350</dd></div></dl><button class="btn primary">打开完整档案</button></aside></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="b" class="direction b">
+      <div class="brief"><strong>B｜核对分屏</strong><div><strong>页面主角</strong><small>左侧岗位导航、中部台账、右侧固定核对面板</small></div><div><strong>用户动作</strong><small>筛选 → 扫描列表 → 右侧核对 → 编辑或进入详情</small></div><div><strong>适合</strong><small>档案维护、减少往返跳转</small></div></div>
+      <div class="screen"><div class="bar"><span class="brand">高速公路广告牌经营管理</span><span class="muted">广告牌资产 / 广告牌台账　　运营档案员 林</span></div><div class="shell">
+        <aside><h3>业务管理</h3><nav><a class="active">广告牌资产</a><a>客户管理</a><a>合同管理</a><a>财务管理</a><a>经营报表</a><a>消息提醒</a><a>售后维护</a></nav><div class="scope">当前数据范围<br><b>华东运营单位</b></div></aside>
+        <div class="work"><div class="title-row"><div><h2>广告牌台账</h2><div class="muted">查询、核对和维护广告牌正式档案</div></div><div class="actions"><button class="btn">导出结果</button><button class="btn primary">新建广告牌</button></div></div>
+          <div class="filter"><input class="field" placeholder="编号或名称"><select class="field"><option>全部路段</option></select><select class="field"><option>全部状态</option></select><button class="btn primary">查询</button><button class="btn">重置</button></div>
+          <div class="split"><div class="table-card"><table><thead><tr><th>编号 / 名称</th><th>路段</th><th>桩号</th><th>状态</th></tr></thead><tbody>
+            <tr class="selected"><td><span class="tiny">GG-2026-018</span><br><b>沪昆高速 K120 广告牌</b></td><td>沪昆高速</td><td><b>K120+350</b></td><td><span class="tag">在租</span></td></tr>
+            <tr><td><span class="tiny">GG-2026-021</span><br><b>绕城高速南段广告牌</b></td><td>绕城高速</td><td><b>K36+800</b></td><td><span class="tag">空闲</span></td></tr>
+            <tr><td><span class="tiny">GG-2025-109</span><br><b>杭瑞高速东向广告牌</b></td><td>杭瑞高速</td><td><b>K88+120</b></td><td><span class="tag">暂停</span></td></tr>
+            <tr><td><span class="tiny">GG-2025-083</span><br><b>机场连接段广告牌</b></td><td>沪昆高速</td><td><b>K142+060</b></td><td><span class="tag">空闲</span></td></tr>
+            <tr><td><span class="tiny">GG-2025-041</span><br><b>杭长高速西向广告牌</b></td><td>杭长高速</td><td><b>K17+420</b></td><td><span class="tag">在租</span></td></tr>
+          </tbody></table></div><aside class="detail"><div class="tiny">当前选中 · GG-2026-018</div><h3>沪昆高速 K120 广告牌</h3><span class="tag">在租</span><div class="wire-photo" style="margin-top:14px">现场照片</div><div class="kv"><span class="muted">所属路段</span><b>沪昆高速</b></div><div class="kv"><span class="muted">运营单位</span><b>华东运营单位</b></div><div class="kv"><span class="muted">合同桩号</span><b>K120+300</b></div><div class="kv"><span class="muted">现场桩号</span><b>K120+350</b></div><footer><button class="btn primary">打开完整档案</button><button class="btn">编辑</button></footer></aside></div>
+        </div></div></div>
+    </section>
+
+    <section id="c" class="direction c">
+      <div class="brief"><strong>C｜路段画布</strong><div><strong>页面主角</strong><small>路段与桩号形成空间化浏览画布</small></div><div><strong>用户动作</strong><small>选择路段 → 定位桩号 → 选中广告牌 → 查看或编辑档案</small></div><div><strong>适合</strong><small>按道路位置理解资产分布</small></div></div>
+      <div class="screen"><div class="bar"><span class="brand">高速公路广告牌经营管理</span><span class="muted">运营档案员 林</span></div><div class="workspace">
+        <aside class="rail"><h3>筛选广告牌</h3><label>编号或名称</label><input class="field" placeholder="请输入"><label>经营状态</label><select class="field"><option>全部状态</option></select><label>手续状态</label><select class="field"><option>全部手续状态</option></select><button class="btn primary">查询</button><button class="btn">重置</button><hr style="margin:24px 0;border:0;border-top:1px solid #aaa"><div class="tiny">当前结果</div><div style="font-size:28px;font-weight:700">128</div><div class="muted">块广告牌</div></aside>
+        <div class="canvas"><div class="canvas-head"><div><div class="tiny">广告牌资产 / 广告牌台账</div><h2>广告牌台账</h2><div class="muted">按所属路段与现场桩号排列</div></div><div class="actions"><button class="btn">导出结果</button><button class="btn primary">新建广告牌</button></div></div>
+          <div class="lanes"><div class="lane"><div class="lane-name"><b>沪昆高速</b><span class="tiny">36 块广告牌</span></div><div class="road"><div class="asset selected" style="left:12%"><b>K120+350</b><small>GG-2026-018 · 在租</small></div><div class="asset" style="left:55%"><b>K142+060</b><small>GG-2025-083 · 空闲</small></div></div></div>
+            <div class="lane"><div class="lane-name"><b>绕城高速</b><span class="tiny">29 块广告牌</span></div><div class="road"><div class="asset" style="left:20%"><b>K36+800</b><small>GG-2026-021 · 空闲</small></div><div class="asset" style="left:63%"><b>K52+710</b><small>GG-2024-196 · 在租</small></div></div></div>
+            <div class="lane"><div class="lane-name"><b>杭瑞高速</b><span class="tiny">24 块广告牌</span></div><div class="road"><div class="asset" style="left:38%"><b>K88+120</b><small>GG-2025-109 · 暂停</small></div></div></div></div>
+          <div class="selection"><div><div class="tiny">当前选中 · GG-2026-018</div><h3>沪昆高速 K120 广告牌</h3><span class="tag">在租</span></div><div><b>位置核对</b><p>所属路段：沪昆高速</p><p>合同桩号：K120+300　现场桩号：K120+350</p></div><div><button class="btn primary">打开完整档案</button><button class="btn">编辑</button></div></div>
+        </div></div></div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('.tabs button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b===btn));document.querySelectorAll('.direction').forEach(s=>s.classList.toggle('active',s.id===btn.dataset.target));window.scrollTo({top:0,behavior:'smooth'})}));
+  </script>
+</body>
+</html>

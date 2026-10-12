@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "公路广告牌 · UX 信息架构",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1300,
+      680
+    ],
+    "legend": {
+      "entries": {
+        "frontend": {
+          "label": "业务页面"
+        },
+        "security": {
+          "label": "身份与权限"
+        }
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "login",
+      "type": "security",
+      "label": "账号密码登录",
+      "sublabel": "按岗位与数据范围授权",
+      "pos": [
+        550,
+        285
+      ],
+      "size": [
+        200,
+        80
+      ]
+    },
+    {
+      "id": "system",
+      "type": "frontend",
+      "label": "P1 系统管理",
+      "sublabel": "岗位权限 · 字典 · 日志",
+      "pos": [
+        60,
+        55
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "tag": "MVP 设计候选"
+    },
+    {
+      "id": "assets",
+      "type": "frontend",
+      "label": "P2 广告牌资产",
+      "sublabel": "路段归属 · 台账 · 合规",
+      "pos": [
+        60,
+        210
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "tag": "MVP 设计候选"
+    },
+    {
+      "id": "customers",
+      "type": "frontend",
+      "label": "P3 客户管理",
+      "sublabel": "档案 · 开票资料 · 账款",
+      "pos": [
+        60,
+        365
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "tag": "MVP 设计候选"
+    },
+    {
+      "id": "contracts",
+      "type": "frontend",
+      "label": "P4 合同管理",
+      "sublabel": "多牌租约 · 年度租金",
+      "pos": [
+        60,
+        520
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "tag": "MVP 设计候选"
+    },
+    {
+      "id": "finance",
+      "type": "frontend",
+      "label": "P5 财务管理",
+      "sublabel": "应收 · 收款 · 核销 · 支出",
+      "pos": [
+        900,
+        55
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "tag": "MVP 设计候选"
+    },
+    {
+      "id": "reports",
+      "type": "frontend",
+      "label": "P6 经营报表",
+      "sublabel": "数量 · 合同 · 收款 · 收益",
+      "pos": [
+        900,
+        210
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "tag": "MVP 设计候选"
+    },
+    {
+      "id": "messages",
+      "type": "frontend",
+      "label": "P7 到期提醒",
+      "sublabel": "合同 · 欠费 · 证件 · 付款",
+      "pos": [
+        900,
+        365
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "tag": "后续设计候选"
+    },
+    {
+      "id": "service",
+      "type": "frontend",
+      "label": "P8 售后维护",
+      "sublabel": "问题登记 · 处理 · 维修",
+      "pos": [
+        900,
+        520
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "tag": "后续设计候选"
+    }
+  ],
+  "connections": [
+    {
+      "from": "login",
+      "to": "system"
+    },
+    {
+      "from": "login",
+      "to": "assets"
+    },
+    {
+      "from": "login",
+      "to": "customers"
+    },
+    {
+      "from": "login",
+      "to": "contracts"
+    },
+    {
+      "from": "login",
+      "to": "finance"
+    },
+    {
+      "from": "login",
+      "to": "reports"
+    },
+    {
+      "from": "login",
+      "to": "messages"
+    },
+    {
+      "from": "login",
+      "to": "service"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "导航规则",
+      "items": [
+        "登录后进入已授权业务页",
+        "一级模块 → 列表 → 对象详情"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "范围待审核",
+      "items": [
+        "P1–P6：39 项优先设计",
+        "P7–P8：7 项保留全局入口规划"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "边界",
+      "items": [
+        "不新增经营首页或 AI 助手",
+        "连线仅表示可授权访问，不是操作顺序"
+      ]
+    }
+  ]
+}
