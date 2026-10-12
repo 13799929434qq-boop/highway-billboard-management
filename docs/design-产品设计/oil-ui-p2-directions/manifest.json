@@ -7,7 +7,7 @@
     {
       "id": "baseline",
       "name": "现有文档驱动稿",
-      "concept": "使用既有低保真结构套用设计规范，作为本轮比较基线。",
+      "concept": "使用既有页面结构套用设计规范，作为本轮比较基线。",
       "typography": "Microsoft YaHei，无衬线统一层级",
       "palette": [
         "#17212B",
