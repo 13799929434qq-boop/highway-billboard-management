@@ -1,6 +1,6 @@
 # Project agent instructions
 
-Read `docs/domain-领域模型/CONTEXT-领域上下文.md` and relevant `docs/adr-架构决策/` decisions before changing domain behavior.
+Read `docs/domain-领域模型/CONTEXT-领域上下文.md` and `docs/adr-架构决策/架构决策总表-现行规则.md` before changing domain behavior.
 
 ## Workflow
 
@@ -29,4 +29,4 @@ Use TAPD priority labels High / Middle / Low per the baseline; in-page numbering
 
 ### Domain docs
 
-Use the single-context layout: `docs/domain-领域模型/CONTEXT-领域上下文.md` for the ubiquitous language and `docs/adr-架构决策/` for architecture decisions. See `docs/project-management-项目管理/agents-协作规则/domain.md`.
+Use the single-context layout: `docs/domain-领域模型/CONTEXT-领域上下文.md` for the ubiquitous language and `docs/adr-架构决策/架构决策总表-现行规则.md` for architecture decisions. See `docs/project-management-项目管理/agents-协作规则/domain.md`.
