@@ -4,9 +4,9 @@ document_type: claude-design-system-source
 version: 1.0
 status: review
 language: zh-CN
-scope: P1-P8 桌面端业务后台
-authoritative_scope: ../需求基线_TAPD对齐版_V1.0.md
-reference_implementation: ./ClaudeDesign驱动_广告牌资产.html
+scope: P0-P8 桌面端业务后台
+authoritative_scope: ../../requirements-需求文档/需求基线_TAPD对齐版_V1.0.md
+reference_implementation: ../pages-高保真页面/广告牌资产高保真页面-现行版.html
 ---
 
 # Claude Design 设计系统输入文档

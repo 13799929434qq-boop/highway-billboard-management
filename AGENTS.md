@@ -17,7 +17,7 @@ OpenSpec is optional and follows the same opt-in rule as other skills. Preserve 
 
 ### Issue tracker
 
-Project work is tracked in TAPD workspace 「魔幻陀螺组」(ID `64099159`). The authoritative scope, 54 story IDs and priorities live in `docs/requirements-需求文档/需求基线_TAPD对齐版_V1.0.md`. See `docs/project-management-项目管理/项目协作规则-现行版.md`.
+Project work is tracked in TAPD workspace 「魔幻陀螺组」(ID `64099159`). The authoritative scope, 47 feature story IDs, 9 category IDs, and priorities live in `docs/requirements-需求文档/需求基线_TAPD对齐版_V1.0.md`. See `docs/project-management-项目管理/项目协作规则-现行版.md`.
 
 ### Triage labels
 
